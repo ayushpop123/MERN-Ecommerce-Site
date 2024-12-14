@@ -9,9 +9,6 @@ Become a seller and add products, monitor sales, and gather customer feedback.
 
 <br>
 
-[Youtube Video](https://youtu.be/i_z0HYk3IuQ?si=S04-IBq7Ny8k0FYC)
-<br><br>
-[LinkedIn](https://www.linkedin.com/in/yogndr/)
 
 # About
 
@@ -44,13 +41,6 @@ ShopCart is an ecommerce site developed using the MERN (MongoDB, Express.js, Rea
 
 # Installation
 
-```sh
-git clone https://github.com/Yogndrr/MERN-Ecommerce-Site.git
-```
-Open 2 terminals in separate windows/tabs.
-
-Terminal 1: Setting Up Backend 
-```sh
 cd backend
 npm install
 npm start
@@ -87,7 +77,7 @@ If you encounter a network error while signing up, follow these steps to resolve
 const REACT_APP_BASE_URL = "http://localhost:5000";
 ```
 
-3. Replace all instances of `process.env.REACT_APP_BASE_URL` with `REACT_APP_BASE_URL`.
+3. Replace all instances of `REACT_APP_BASE_URL` with `REACT_APP_BASE_URL`.
 
 The issue arises because the `.env` file in the frontend may not work for all users, while it works for me.
 

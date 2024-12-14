@@ -15,16 +15,57 @@ const productCreate = async (req, res) => {
 
 const getProducts = async (req, res) => {
     try {
-        let products = await Product.find().populate("seller", "shopName");
-        if (products.length > 0) {
-            res.send(products);
-        } else {
-            res.send({ message: "No products found" });
-        }
+        // If you want to use the dummy data for testing or fallback, add the following block
+        const dummyProducts = [
+            {
+                id: 1,
+                name: 'Product 1',
+                price: 100,
+                image: 'https://via.placeholder.com/150',
+                description: 'A great product',
+                category: 'Electronics',
+            },
+            {
+                id: 2,
+                name: 'Product 2',
+                price: 200,
+                image: 'https://via.placeholder.com/150',
+                description: 'Another awesome product',
+                category: 'Books',
+            },
+        ];
+
+        // You can comment or remove this line if you are using real data from the database
+        // let products = await Product.find().populate("seller", "shopName");
+
+        // For testing purposes, return dummy data
+        res.send(dummyProducts);
+        
+        // Uncomment the next part if you're fetching real products from MongoDB
+        // if (products.length > 0) {
+        //     res.send(products);
+        // } else {
+        //     res.send({ message: "No products found" });
+        // }
+
     } catch (err) {
         res.status(500).json(err);
     }
 };
+
+
+// const getProducts = async (req, res) => {
+//     try {
+//         let products = await Product.find().populate("seller", "shopName");
+//         if (products.length > 0) {
+//             res.send(products);
+//         } else {
+//             res.send({ message: "No products found" });
+//         }
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// };
 
 const getSellerProducts = async (req, res) => {
     try {
